@@ -1,0 +1,188 @@
+object fLists: TfLists
+  Left = 595
+  Height = 475
+  Top = 268
+  Width = 446
+  Caption = 'Листы'
+  ClientHeight = 475
+  ClientWidth = 446
+  Color = clBtnFace
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Arial Narrow'
+  OnActivate = FormActivate
+  OnClose = FormClose
+  Position = poScreenCenter
+  LCLVersion = '2.0.10.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 435
+    Width = 446
+    Align = alBottom
+    ClientHeight = 40
+    ClientWidth = 446
+    TabOrder = 0
+    object btEdit: TButton
+      Left = 6
+      Height = 25
+      Top = 6
+      Width = 80
+      Caption = 'Изменить'
+      OnClick = btEditClick
+      TabOrder = 0
+    end
+    object btNew: TButton
+      Left = 90
+      Height = 25
+      Top = 6
+      Width = 80
+      Caption = 'Новый'
+      OnClick = btNewClick
+      TabOrder = 1
+    end
+    object btDelete: TButton
+      Left = 174
+      Height = 25
+      Top = 6
+      Width = 80
+      Caption = 'Удалить'
+      OnClick = btDeleteClick
+      TabOrder = 2
+    end
+    object btFind: TButton
+      Left = 258
+      Height = 25
+      Top = 6
+      Width = 80
+      Caption = 'Найти'
+      OnClick = btFindClick
+      TabOrder = 3
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 395
+    Top = 0
+    Width = 446
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'ИД Листа'
+        FieldName = 'ID_LIST'
+      end    
+      item
+        Title.Caption = 'Масса'
+        FieldName = 'LIST_MASS'
+        DisplayFormat = '### ### ### ##0.00'
+      end    
+      item
+        Title.Caption = 'Название'
+        Width = 100
+        FieldName = 'LIST_NAME'
+      end>
+    DataSource = ds
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial Narrow'
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 40
+    Top = 395
+    Width = 446
+    Align = alBottom
+    ClientHeight = 40
+    ClientWidth = 446
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 14
+      Height = 25
+      Top = 6
+      Width = 73
+      AutoSize = False
+      Caption = 'Название'
+      ParentColor = False
+    end
+    object MaskEdit1: TMaskEdit
+      Left = 98
+      Height = 25
+      Top = 6
+      Width = 121
+      AutoSize = False
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+      SpaceChar = '_'
+    end
+  end
+  object ds: TDataSource
+    DataSet = q
+    Left = 288
+    Top = 144
+  end
+  object sp: TIBStoredProc
+    AllowAutoActivateTransaction = False
+    Database = dm.db
+    Transaction = dm.trans
+    Params = <>
+    Left = 288
+    Top = 96
+  end
+  object q: TIBDataSet
+    AllowAutoActivateTransaction = False
+    Database = dm.db
+    Transaction = dm.trans
+    BufferChunks = 1000
+    CachedUpdates = False
+    CaseSensitiveParameterNames = False
+    EnableStatistics = False
+    SelectSQL.Strings = (
+      'select'
+      '      id_list,'
+      '      list_mass * 1.0 as list_mass,'
+      '      list_name'
+      'from Lists'
+      'order by list_name;'
+    )
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    GenerateParamNames = False
+    MasterDetailDelay = 0
+    DataSetCloseAction = dcDiscardChanges
+    Left = 72
+    Top = 72
+    object qID_LIST: TIBIntegerField
+      FieldKind = fkData
+      FieldName = 'ID_LIST'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qLIST_MASS: TFloatField
+      FieldKind = fkData
+      FieldName = 'LIST_MASS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 2
+    end
+    object qLIST_NAME: TIBStringField
+      FieldKind = fkData
+      FieldName = 'LIST_NAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

@@ -1,0 +1,198 @@
+object frmAbout: TfrmAbout
+  Left = 645
+  Height = 246
+  Top = 310
+  Width = 388
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Раскрой'
+  ClientHeight = 246
+  ClientWidth = 388
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  LCLVersion = '2.0.10.0'
+  object PageControl: TPageControl
+    Left = 4
+    Height = 240
+    Top = 4
+    Width = 382
+    ActivePage = tsAbout
+    Align = alCustom
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = PageControlChange
+    object tsAbout: TTabSheet
+      Caption = 'О программе...'
+      ClientHeight = 214
+      ClientWidth = 374
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clInfoText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ImageIndex = 2
+      ParentFont = False
+      object ImageAbout: TImage
+        Left = 5
+        Height = 40
+        Top = 8
+        Width = 40
+        Align = alCustom
+        Center = True
+        Transparent = True
+      end
+      object Label8: TLabel
+        Left = 265
+        Height = 1
+        Top = 23
+        Width = 1
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clInfoText
+        Font.Height = -15
+        Font.Name = 'Tahoma'
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label10: TLabel
+        Left = 55
+        Height = 23
+        Top = 20
+        Width = 80
+        Caption = 'Раскрой'
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clInfoText
+        Font.Height = -19
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+      end
+      object Bevel2: TBevel
+        Left = 5
+        Height = 5
+        Top = 59
+        Width = 321
+        Shape = bsTopLine
+      end
+      object Label13: TLabel
+        Left = 5
+        Height = 40
+        Top = 168
+        Width = 348
+        AutoSize = False
+        Caption = 'Данная программа защищена международными законами об авторских правах. Использование продукта в коммерческих целях ЗАПРЕЩЕНО.'
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clInfoText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object Label12: TLabel
+        Left = 5
+        Height = 13
+        Top = 149
+        Width = 66
+        Caption = 'ВНИМАНИЕ:'
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clInfoText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label7: TLabel
+        Left = 5
+        Height = 21
+        Top = 72
+        Width = 346
+        AutoSize = False
+        Caption = 'Руководитель: Гусятинер Л.Б.'
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clInfoText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object Label6: TLabel
+        Left = 5
+        Height = 13
+        Top = 120
+        Width = 112
+        Caption = 'Copyright МГОТУ 2020'
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clInfoText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label18: TLabel
+        Left = 222
+        Height = 13
+        Top = 95
+        Width = 32
+        Caption = 'E-mail:'
+        ParentColor = False
+      end
+      object Label20: TLabel
+        Left = 5
+        Height = 13
+        Top = 95
+        Width = 65
+        Caption = 'Разработчик'
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clInfoText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label21: TLabel
+        Left = 256
+        Height = 1
+        Top = 95
+        Width = 1
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clHotLight
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 72
+        Height = 13
+        Top = 95
+        Width = 67
+        Caption = 'Барилко И.А.'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 144
+        Height = 1
+        Top = 95
+        Width = 1
+        ParentColor = False
+      end
+    end
+  end
+end

@@ -1,0 +1,29 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 144
+  HorizontalOffset = 333
+  VerticalOffset = 142
+  Width = 150
+  object db: TIBDatabase
+    Connected = False
+    CreateIfNotExists = False
+    AllowStreamedConnected = True
+    DatabaseName = 'C:\Db\Raskroi.FDB'
+    IdleTimer = 0
+    TraceFlags = []
+    UseDefaultSystemCodePage = False
+    Left = 49
+    Top = 18
+  end
+  object trans: TIBTransaction
+    Active = False
+    DefaultDatabase = db
+    Params.Strings = (
+      'read_committed'
+      'rec_version'
+      'nowait'
+    )
+    Left = 83
+    Top = 88
+  end
+end
